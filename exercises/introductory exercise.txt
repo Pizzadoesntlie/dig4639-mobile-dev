@@ -1,0 +1,12 @@
+
+Validation feature on sign-in page on snapchat mobile app (form processing)
+User input/information needed: username or email address and password
+When one field is incorrect, the app provides feedback saying that the information entered is invalid or incorrect (validation).
+<Form action = “ofhaof.php” method=”post”>
+Username or email address: <input type=”text”>
+Password: <input type=”text”>
+<input type = “submit”>
+</form>
+//needs to check user input against database of usernames and passwords
+//if user input is valid, logs user into app, if user input is invalid then it doesn’t allow the user to log in sending an error message
+Contributors: sfarls, jrongjie, 
