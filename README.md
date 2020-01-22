@@ -8,3 +8,7 @@ The *ice* folder contains in-class exercises.
 Shanice Gordon 
 Dedicated and motivated individual with the desire to use web/mobile application design and development skills to benefit a company with similar values. Eager and willing to learn and grow within the company, using fundamental design skills to adequately fulfill position.
  https://www.linkedin.com/in/shanice-gordon-2a0ab7199/
+ 
+ ## Conflicts
+ 
+ This section represents code on the server that isn't on the local repository.
