@@ -1,3 +1,19 @@
 .task {
    background:gray; 
 }
+@media only screen and (min-width: 600px) {
+   .task {
+      background:pink;
+   }
+   body {
+      background: gray;
+   }
+}
+@media only screen and (min-width: 992px) {
+   .task {
+      background:gray;
+   }
+   body {
+      background: black;
+   }
+}
