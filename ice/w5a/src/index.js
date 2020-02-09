@@ -1,6 +1,6 @@
-import Task from "./components/Task/index.js"
+import Task from "./components/Task.js"
 let element;
-let input;
+let inputElement;
 function runOnLoad()
 {
     // Create a container for us
@@ -10,12 +10,15 @@ function runOnLoad()
     input = document.getElementById("taskText");
     // Handle adding a new task
     var addTaskButton = document.getElementById("addTask");
+    inputElement = document.getElementById("taskText");
     addTaskButton.addEventListener("click", onClick)
 }
 
 function onClick() {
     console.log("clicked!");
-    var newTask = new Task({content:input.value,done:false});
+    var newTask  = new Task({
+        content:inputElement.value
+    })
     element.appendChild(newTask.render());
 }
 

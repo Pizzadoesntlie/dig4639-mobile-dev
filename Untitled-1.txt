@@ -1,0 +1,10 @@
+//notes 2/3/20
+
+information that results in a rendered value, programming is all about manipulating values
+values are primitive data 
+can be input by the user, by a server, a disk 
+values are stored in variables
+functions are declared using the keyword function, can pass in arguments and variables, the variable will be passed in first.
+they are stored as parameters
+can assign a function to a variable
+classes
