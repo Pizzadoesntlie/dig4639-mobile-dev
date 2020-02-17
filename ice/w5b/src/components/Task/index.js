@@ -10,6 +10,8 @@ class Task {
         checkbox.type = "checkbox";
         this.onClick = this.onClick.bind(this);
         checkbox.addEventListener("change",this.onClick);
+        
+
         this.element.appendChild(checkbox);
         let span = document.createElement("span");
         this.element.appendChild(span);
@@ -38,6 +40,9 @@ class Task {
         console.log(this.props.done);
         console.log(e.target);
         console.log(e.target.checked);
+    }
+    delete(){
+        this.parentNode.remove();
     }
     render() {
         return this.element;
