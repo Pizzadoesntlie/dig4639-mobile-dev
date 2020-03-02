@@ -23,7 +23,7 @@ render() {
     return(
         <>
     {this.state.cardList
-    .map((v) => <Card id={v.id} key={v.id} removeCard={(id) => this.removeCard(id)} content={v.content} //pass attributes
+    .map((v) => <Card id={v.id} key={v.id} removeCard={(id) => this.removeCard(id)} content={v.content} title={v.title}//pass attributes
     />)}
         </>
     )
