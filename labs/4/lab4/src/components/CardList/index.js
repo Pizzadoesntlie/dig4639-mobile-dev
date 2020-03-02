@@ -1,15 +1,20 @@
 import React from 'react';
-import cardList from './data.json'
+import cardList from './data.json';
+import Card from '../Card';
 
 class CardList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-          cardList
+          cardList : cardList.cards.map((v,i) => {
+              v.id = i;
+              return v;
+          } ) 
         }
         this.currentId = 4;
     }
     removeCard(id) {
+        console.log(id);
     let cardList = this.state.cardList;
     cardList = cardList.filter((v) => v.id !== id)
     this.setState({cardList})
@@ -17,14 +22,12 @@ class CardList extends React.Component {
 render() {
     return(
         <>
-        <input type="text" ref="CardContent" />
-    {((this.state.hideCompletedItems) ? this.state.CardList
-    .filter((v) => !v.completed) : this.state.CardList)
-    .map((v) => <CardList id={v.id} removeCard={(id) => this.removeCard(id)} content={v.content} //pass attributes
-    priority={v.priority} 
-    completed={v.completed}/>)}
+    {this.state.cardList
+    .map((v) => <Card id={v.id} key={v.id} removeCard={(id) => this.removeCard(id)} content={v.content} //pass attributes
+    />)}
         </>
     )
 }
 
 }
+export default CardList;
