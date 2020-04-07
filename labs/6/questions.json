@@ -1,0 +1,112 @@
+[
+    {
+      "question": "What is the most popular programming language in the world?",
+      "possibleAnswers": 
+      [ 
+        {
+          "text": "Javascript",
+          "correct": true
+        },
+        {
+          "text": "C++",
+          "correct": false
+        },
+        {
+          "text": "Python",
+          "correct": false
+        },
+        {
+          "text": "Go",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "What command is used to install a node package?",
+      "possibleAnswers": 
+      [ 
+        {
+          "text": "npx run",
+          "correct": false
+        },
+        {
+          "text": "node index.js",
+          "correct": false
+        },
+        {
+          "text": "npm install",
+          "correct": true
+        },
+        {
+          "text": "Not Sure",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "What is the command for creating a new react app?",
+      "possibleAnswers": 
+      [ 
+        {
+          "text": "npx create-next-app <folder name>",
+          "correct": false
+        },
+        {
+          "text": "npx create-react-app <folder name>",
+          "correct": true
+        },
+        {
+          "text": "npm react app <folder name>",
+          "correct": false
+        },
+        {
+          "text": "IDK",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "Which one is a proper tag in React Native?",
+      "possibleAnswers": 
+      [ 
+        {
+          "text": "<div>",
+          "correct": false
+        },
+        {
+          "text": "<h1>",
+          "correct": false
+        },
+        {
+          "text": "<input>",
+          "correct": false
+        },
+        {
+          "text": "<View>",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "question": "How do you properly commit something to github in VS code?",
+      "possibleAnswers": 
+      [ 
+        {
+          "text": "Type git add in terminal",
+          "correct": false
+        },
+        {
+          "text": "Type commit in terminal",
+          "correct": false
+        },
+        {
+          "text": "Stage Changes, write commit message, click checkmark, then click push",
+          "correct": true
+        },
+        {
+          "text": "Do nothing",
+          "correct": false
+        }
+      ]
+    }
+  ]
