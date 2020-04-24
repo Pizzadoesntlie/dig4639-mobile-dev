@@ -121,8 +121,8 @@ class App extends React.Component {
       <>
       <div>
         <form onSubmit={this.addContact()}>
-      <p>Name: <input type="text" name="name" value={this.state.currentContact.text} /> 
-       Number: <input type="text" name="number" value={this.state.currentContact.text} /></p>
+      <p>Name: <input type="text" name="name" value={this.state.currentContact.text} onChange={this.nameInput} /> 
+       Number: <input type="text" name="number" value={this.state.currentContact.text} onChange={this.numberInput} /></p>
        <button type='submit'>Add Contact</button>
        <input type="button" className="removeButton" value="Remove Contact" onClick={this.removeContact()} />
        </form>
