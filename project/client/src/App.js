@@ -11,12 +11,30 @@ class App extends React.Component {
       contacts: [],
        currentContact: { 
         name: '',
-        number:''
+        number: 0,
+        position: 0
       }
     }
    this.nameInput = this.nameInput.bind(this);
    this.numberInput = this.numberInput.bind(this);
    this.addContact = this.addContact.bind(this);
+  }
+
+  nameInput =(e) => {
+    e.preventDefault();
+    this.setState({
+      currentContact: {
+        name: e.target.value
+      }
+    })
+  }
+  numberInput = (e) => {
+    e.preventDefault();
+    this.setState({
+      currentContact: {
+        number: e.target.value
+      }
+    })
   }
 
   componentDidMount() {
@@ -30,30 +48,19 @@ class App extends React.Component {
       this.setState({contacts: body.contacts});
     });
   }
-
-  nameInput(e) {
-    this.setState({
-      currentContact: {
-        name: e.target.value
-      }
-    })
-  }
-  numberInput(e) {
-    this.setState({
-      currentContact: {
-        number: e.target.value
-      }
-    })
-  }
   
-  addContact(e) {
+  addContact() {
     window.fetch('http://plato.mrl.ai:8080/contacts/add', {
       method: "POST",
       headers: {
         API: "gordon",
         'Content-Type': "application/json",
         'Accept': "application/json"
-      }
+      },
+      "body": JSON.stringify({
+        name: '',
+        number:''
+      })
     })
     .then((res) => res.json())
     .then((body) => {
@@ -64,7 +71,7 @@ class App extends React.Component {
           contacts: newContacts,
           currentContact: {
             name: '',
-            number:'',
+            number:''
           }
         })
       /*const newContact = {name: this.state.name, number: this.state.number}
@@ -88,7 +95,7 @@ class App extends React.Component {
         'Content-Type': "application/json",
         'Accept': "application/json"
       },
-      body: JSON.stringify({position:position})
+      body: JSON.stringify({position:position, status:true})
     })
     .then((res) => res.json())
     .then((body) => {
@@ -113,6 +120,7 @@ class App extends React.Component {
       this.setState({contacts:body.contacts.length})
     })
   }
+ // <input type="checkbox" checked={this.removeContact(position)}/>
   ///if(body.removed != undefined) {const newContact this.state.contacts.filter(v,i) => (i !== position))}
   //<input type="button" className="addButton" value="Add Contact" onClick={this.addContact} />
 //profile create a component and show the server output to the user that is logged in so they can see what contacts they have or create a separate page that shows that output
@@ -120,7 +128,7 @@ class App extends React.Component {
     return(  
       <>
       <div>
-        <form onSubmit={this.addContact()}>
+        <form onSubmit={this.addContact}>
       <p>Name: <input type="text" name="name" value={this.state.currentContact.text} onChange={this.nameInput} /> 
        Number: <input type="text" name="number" value={this.state.currentContact.text} onChange={this.numberInput} /></p>
        <button type='submit'>Add Contact</button>
@@ -131,8 +139,8 @@ class App extends React.Component {
          <p>CONTACTS:</p>
           { 
             this.state.contacts.map((value, index) => {
-            return <p key={index}><input type="checkbox" onClick={this.removeContact()}/>
-             {value.name} {value.number}{this.state.currentContact.text}</p>;
+            return <p key={index}>
+             {value.name} {value.number}</p>;
             })
          }
         </div>
